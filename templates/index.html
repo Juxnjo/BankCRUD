@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+            <a href="registrar/" class="btn btn-primary">Registrar Cuenta</a>
+            <a href="transacciones/" class="btn btn-success ">Pasar Plata</a>
+        <br><br>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th># Cuenta</th>
+                    <th>Tipo Cuenta</th>
+                    <th>Titular</th>
+                    <th>Saldo</th>
+                    <th width="200">Acciones</th>
+                </tr>
+            </thead>
+                {% for rs in cuentas %}
+                    <tr>
+                        <td>{{ rs.id }}</td>
+                        <td>{{ rs.numero_cuenta }}</td>
+                        <td>{{ rs.tipo_cuenta }}</td>
+                        <td>{{ rs.nombre }}</td>
+                        <td>{{ rs.saldo }}</td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                              <a href="editar/{{ rs.id }}" class="btn btn-success btn-block">Editar</a>
+                              <a href="retirarse/{{ rs.id }}" class="btn btn-primary btn-block">Retirarse</a>
+                              <a href="borrar/{{ rs.id }}" class="btn btn-danger btn-block">Borrar</a>
+                            </div>
+                          </td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
