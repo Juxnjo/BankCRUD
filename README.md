@@ -23,9 +23,3 @@ En resumen, es un CRUD con interfaz sencilla de formularios para el usuario, que
 • Editar cuenta bancaria
 • Retirarse del banco generando una transacción que disminuye el saldo de la cuenta a cero
 • Eliminar cuenta bancaria
-Todo lo anterior está conectado a la base de datos ‘bancodb’ y se puede ejecutar en SQLite Server
-(3.4.4) para ver que las solicitudes se actualizan automáticamente dentro de la tabla ‘cuentas’.
-También se tiene un formulario pensado para realizar transacciones entre cuentas, pero, mis
-conocimientos actualmente en el framework no me permiten tener la lógica para usar los
-condicionales y métodos necesarios para permitir hacer transacciones entre cuentas y que los
-saldos se actualicen automáticamente en las tablas ‘movimientos’ y ‘tipo_transaccion’.
